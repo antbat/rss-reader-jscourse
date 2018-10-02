@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 app.use('/', express.static(path.join(__dirname, 'public')));
-app.use('/SPA', express.static(path.join(__dirname, 'spa')));
+app.use('/spa', express.static(path.join(__dirname, 'SPA')));
 
 app.use('/', routes);
 app.use('/users', users);
