@@ -1,6 +1,3 @@
-
-
-
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -29,7 +26,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/spa', express.static(path.join(__dirname, 'spa')));
 
 app.use('/', routes);
 app.use('/users', users);
